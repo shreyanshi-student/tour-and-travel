@@ -1,0 +1,115 @@
+.banner-container {
+    position: relative;
+    width: 100%;
+    height: 100vh; /* Full screen height */
+    overflow: hidden;
+    z-index: 0; /* Keep the banner at normal layer */
+}
+
+.banner-image {
+    width: 100%;
+    height: 100%;
+    transition: opacity 1s ease;
+    object-fit: cover; /* Ensures images cover the container */
+}
+
+.banner-controls {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    transform: translateY(-50%);
+}
+
+.banner-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Black semi-transparent overlay */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px; /* Added padding to give the text and button some room */
+}
+
+.text-banner {
+    text-align: center;
+    color: white;
+    max-width: 80%; /* Limit the width of the text */
+    z-index: 999;
+}
+
+.main-head {
+    font-weight: 700;
+    font-size: 3rem!important; /* Increased font size for readability */
+    margin-bottom: 15px!important; /* Space between heading and paragraph */
+}
+
+.overlay-text {
+    font-size: 1.5rem; /* Adjusted font size for better readability */
+    margin-bottom: 30px; /* Added space between text and button */
+}
+
+.assistance-btn {
+    padding: 12px 24px;
+    font-size: 1.2rem;
+    color: white;
+    background-color: #00bdbb; /* Button color */
+    border: 1px solid #00bdbb;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    margin-top: 20px; /* Add space between the button and text */
+}
+
+.assistance-btn:hover {
+    color: #00bdbb;
+    transform: scale(1.1);
+    background-color: transparent;
+}
+
+.prev-btn,
+.next-btn {
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 15px;
+    cursor: pointer;
+    font-size: 24px;
+    border-radius: 50%;
+    transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.prev-btn:hover,
+.next-btn:hover {
+    background-color: rgba(0, 0, 0, 0.7);
+    transform: scale(1.1);
+}
+
+.prev-btn:focus,
+.next-btn:focus {
+    outline: none;
+}
+
+@media (max-width: 768px) {
+    .main-head {
+        font-size: 2rem; /* Reduced size on small screens */
+    }
+
+    .overlay-text {
+        font-size: 1.1rem; /* Adjusted font size */
+    }
+
+    .assistance-btn {
+        font-size: 1rem; /* Reduced button font size */
+        padding: 10px 20px; /* Reduced padding */
+    }
+
+    .prev-btn, .next-btn {
+        padding: 10px;
+        font-size: 18px;
+    }
+}

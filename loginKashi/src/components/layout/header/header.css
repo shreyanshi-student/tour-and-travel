@@ -1,0 +1,37 @@
+.logo-container {
+    width: 150px;
+}
+.max-w-7xl{
+    max-width: 1240px;
+}
+.justify-between {
+    justify-content: space-between;
+}
+.items-center{
+    align-items: center;
+}
+.mx-auto {
+    margin: auto;
+}
+.p-\[15px\]{
+    padding: 15px;
+}
+
+.bg-blue{
+    background: #00BDBB;
+}
+.bg-white{
+    background: #fff;
+}
+.navigation-bar {
+    flex-direction: row;
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    margin-bottom: -20px;
+    box-shadow: rgba(136, 165, 191, 0.48) 6px 2px 16px 0px, rgba(255, 255, 255, 0.8) -6px -2px 16px 0px;
+    z-index: 1;
+}
+.flex-column {
+    flex-direction: column;
+}

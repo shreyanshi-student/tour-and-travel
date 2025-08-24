@@ -29,7 +29,7 @@ app.get(/^\/admin(\/.*)?$/, (req, res) => {
 
 // Frontend (everything except /admin)
 app.get(/^\/(?!admin).*/, (req, res) => {
-    res.sendFile(path.join(__dirname, 'frontend/build/index.html'));
+    res.sendFile(path.join(__dirname, 'loginKashi/build/index.html'));
 });
 
 // MongoDB connection

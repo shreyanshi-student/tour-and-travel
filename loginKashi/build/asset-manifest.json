@@ -1,0 +1,37 @@
+{
+  "files": {
+    "main.css": "/static/css/main.59623151.css",
+    "main.js": "/static/js/main.b6cf9656.js",
+    "static/js/453.6eb8b364.chunk.js": "/static/js/453.6eb8b364.chunk.js",
+    "static/media/blogsImage3.jpg": "/static/media/blogsImage3.7359c15a99652e6dddc1.jpg",
+    "static/media/prayagraj2.jpg": "/static/media/prayagraj2.76d6335c9b01e03a946e.jpg",
+    "static/media/varanasi3.jpg": "/static/media/varanasi3.baad1009306d5682a2bc.jpg",
+    "static/media/blogsImage1.jpg": "/static/media/blogsImage1.cae906643bb5718f2069.jpg",
+    "static/media/blogsImage2.jpg": "/static/media/blogsImage2.c937c5f19f6b2bdaeae4.jpg",
+    "static/media/varanasi1.jpg": "/static/media/varanasi1.c937c5f19f6b2bdaeae4.jpg",
+    "static/media/prayagraj1.jpg": "/static/media/prayagraj1.3d0077748a0248dbf0b7.jpg",
+    "static/media/banner2.jpg": "/static/media/banner2.bfbadbb7185bd731f302.jpg",
+    "static/media/banner1.jpg": "/static/media/banner1.285241ebba89c22df9db.jpg",
+    "static/media/banner4.jpg": "/static/media/banner4.75e2e542fe95942791e1.jpg",
+    "static/media/varanasi2.jpg": "/static/media/varanasi2.47a2de787bdb6b33b9d2.jpg",
+    "static/media/team-image.jpg": "/static/media/team-image.27a5f324a94fe7ecf8e4.jpg",
+    "static/media/banner3.jpg": "/static/media/banner3.4f8af4b820caa6776f29.jpg",
+    "static/media/login2kasi-logo.png": "/static/media/login2kasi-logo.543eb24323e7ffb81d56.png",
+    "static/media/prayagraj3.webp": "/static/media/prayagraj3.ef3c8ad5b99ba634972b.webp",
+    "static/media/blogs4.avif": "/static/media/blogs4.d79774b2488247378350.avif",
+    "static/media/ayodhya1.jpg": "/static/media/ayodhya1.c8a4e02635bd8665f8ad.jpg",
+    "static/media/blogs3.avif": "/static/media/blogs3.3bfeef05a1996c916c92.avif",
+    "static/media/footer.jpg": "/static/media/footer.4bf7c42f5bc6ecc3f879.jpg",
+    "static/media/aboutus.avif": "/static/media/aboutus.6a3982b5977c4eb0520a.avif",
+    "static/media/blogs2.avif": "/static/media/blogs2.6a3982b5977c4eb0520a.avif",
+    "static/media/blogs1.avif": "/static/media/blogs1.6b204c5e03fcb59ccb94.avif",
+    "index.html": "/index.html",
+    "main.59623151.css.map": "/static/css/main.59623151.css.map",
+    "main.b6cf9656.js.map": "/static/js/main.b6cf9656.js.map",
+    "453.6eb8b364.chunk.js.map": "/static/js/453.6eb8b364.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.59623151.css",
+    "static/js/main.b6cf9656.js"
+  ]
+}
