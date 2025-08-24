@@ -27,7 +27,7 @@ export const loginUser = (email, password) => async (dispatch) => {
   try {
     dispatch({ type: USER_LOGIN_REQUEST });
 
-    const res = await fetch(`${basename}/api/auth/admin/login`, {
+    const res = await fetch(`${basename}api/auth/admin/login`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ email, password }),
