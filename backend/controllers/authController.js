@@ -1,4 +1,4 @@
-const User = require('../models/User');
+const {User} = require('../models/User');
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 const { validationResult } = require('express-validator');
@@ -70,26 +70,35 @@ await user.save();
 
 
 // ==================== User Login ====================
+// require('dotenv').config();
+// const jwt = require('jsonwebtoken');
+// const bcrypt = require('bcryptjs');
+
 exports.loginUser = async (req, res) => {
-  const errors = validationResult(req);
-  if (!errors.isEmpty()) return res.status(400).json({ errors: errors.array() });
-
   const { email, password } = req.body;
-  try {
-    const user = await User.findOne({ email });
-    if (!user) return res.status(401).json({ message: 'Invalid email or password' });
 
-    // ✅ Check role
-    if (user.role !== 'user') {
-      return res.status(403).json({ message: 'Access denied. Not a user account.' });
+  try {
+    // Check against .env credentials
+    if (email === process.env.ADMIN_EMAIL && password === process.env.ADMIN_PASSWORD) {
+      // Create a token for admin
+      const token = jwt.sign(
+        { id: 'admin-id', email, role: 'admin' },
+        process.env.JWT_SECRET,
+        { expiresIn: '1d' }
+      );
+
+      // Return admin info
+      return res.json({
+        message: 'Admin login successful',
+        token,
+        admin: { email, role: 'admin', name: 'Admin' },
+      });
     }
 
-    const isMatch = await bcrypt.compare(password, user.password);
-    if (!isMatch) return res.status(401).json({ message: 'Invalid email or password' });
-
-    const token = jwt.sign({ id: user._id, email: user.email, role: user.role }, process.env.JWT_SECRET, { expiresIn: '1d' });
-    res.json({ message: 'User login successful', token, user });
+    // Otherwise, invalid credentials
+    return res.status(401).json({ message: 'Invalid email or password' });
   } catch (err) {
+    console.error("Login error:", err);
     res.status(500).json({ message: 'Server error' });
   }
 };

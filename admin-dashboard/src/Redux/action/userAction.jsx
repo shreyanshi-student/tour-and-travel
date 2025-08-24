@@ -19,7 +19,7 @@ import {
 // Check if running locally
 export const basename =
   window.location.hostname === "localhost" || window.location.hostname === "127.0.0.1"
-    ? "http://localhost:5000"          
+    ? "http://localhost:5000/"          
     : "https://login2kashi.onrender.com/"; 
 
 
@@ -27,7 +27,7 @@ export const loginUser = (email, password) => async (dispatch) => {
   try {
     dispatch({ type: USER_LOGIN_REQUEST });
 
-    const res = await fetch(`${basename}api/auth/admin/login`, {
+    const res = await fetch(`${basename}api/auth/users/login`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ email, password }),
