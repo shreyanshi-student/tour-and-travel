@@ -17,8 +17,8 @@ app.use('/api/auth', require('./backend/routes/authRoutes'));
 
 
 
-// ✅ Serve static files for frontend and admin
-app.use('/', express.static(path.join(__dirname, 'frontend/build')));
+// ✅ Serve static files for loginKashi and admin
+app.use('/', express.static(path.join(__dirname, 'loginKashi/build')));
 app.use('/admin', express.static(path.join(__dirname, 'admin-dashboard/build')));
 
 // ✅ React routing — two separate catch-alls using regex
