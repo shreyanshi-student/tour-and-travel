@@ -1,6 +1,6 @@
 import React from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
-import { LayoutDashboard, Users, LogOut } from "lucide-react";
+import { LayoutDashboard, Users, LogOut, Tag, UsersRound, FileText } from "lucide-react";
 import { useDispatch } from "react-redux";
 import { logoutUser } from "../../Redux/action/userAction";
 
@@ -40,6 +40,18 @@ export default function Sidebar() {
         <Link to="/users" className={linkClass("/users")}>
           <Users size={20} />
           Users
+        </Link>
+        <Link to="/offers" className={linkClass("/offers")}>
+          <Tag size={20} />
+          Offers
+        </Link>
+        <Link to="/team" className={linkClass("/team")}>
+          <UsersRound size={20} />
+          Team Members
+        </Link>
+        <Link to="/blogs" className={linkClass("/blogs")}>
+          <FileText size={20} />
+          Blogs
         </Link>
       </nav>
 

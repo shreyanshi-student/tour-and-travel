@@ -5,6 +5,9 @@ import UserList from "./pages/userlist";
 import UserForm from "./pages/userform";
 import Login from "./pages/login";
 import ProtectedRoute from "./components/protectedRoute";
+import OfferList from './pages/offerlist';
+import TeamList from "./pages/team";
+import BlogList from './pages/bloglist'
 
 function App() {
   return (
@@ -22,8 +25,11 @@ function App() {
           }
         />
         <Route path="/users" element={<ProtectedRoute><UserList /></ProtectedRoute>} />
-<Route path="/users/add" element={<ProtectedRoute><UserForm /></ProtectedRoute>} />
-<Route path="/users/edit/:id" element={<ProtectedRoute><UserForm /></ProtectedRoute>} />
+        <Route path="/offers" element={<ProtectedRoute><OfferList /></ProtectedRoute>} />
+        <Route path="/team" element={<ProtectedRoute><TeamList /></ProtectedRoute>} />
+        <Route path="/blogs" element={<ProtectedRoute><BlogList /></ProtectedRoute>} />
+        <Route path="/users/add" element={<ProtectedRoute><UserForm /></ProtectedRoute>} />
+        <Route path="/users/edit/:id" element={<ProtectedRoute><UserForm /></ProtectedRoute>} />
       </Routes>
     </Router>
   );
