@@ -8,7 +8,7 @@ const { registerUser, loginUser, getUsers, updateUser, deleteUser } = require(".
 const offerController = require('../controllers/offerController');
 
 router.post("/users/register", upload.single("image"), registerUser);
-router.post("/user/login", loginUser);
+router.post("/users/login", loginUser);
 router.get("/users", getUsers);
 router.put("/users/:id", upload.single("image"), updateUser);
 router.delete("/users/:id", deleteUser);
