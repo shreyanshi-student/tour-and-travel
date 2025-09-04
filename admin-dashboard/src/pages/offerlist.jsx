@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import { PlusCircle } from "lucide-react";
 import AdminLayout from "../layouts/AdminLayout";
 
@@ -43,12 +44,12 @@ export default function OffersTable() {
                 {/* Header with Add button */}
                 <div className="flex justify-between items-center mb-6">
                     <h1 className="text-2xl font-bold text-green-700">Offers List</h1>
-                    <button
-                        onClick={() => alert("Open Add Offer Form")}
+                    <Link
+                        to="/offer/add"
                         className="flex items-center gap-2 px-4 py-2 bg-green-700 hover:bg-green-800 text-white rounded-lg shadow-md transition"
                     >
                         <PlusCircle size={18} /> Add New Offer
-                    </button>
+                    </Link>
                 </div>
 
                 {/* Table */}
@@ -103,9 +104,12 @@ export default function OffersTable() {
                                             )}
                                         </td>
                                         <td className="px-4 py-3 space-x-2">
-                                            <button className="px-3 py-1 text-xs rounded-md bg-blue-100 text-blue-700 hover:bg-blue-200">
+                                            <Link
+                                                to={`/offer/edit/${offer._id}`} // replace offer._id with your actual id
+                                                className="px-3 py-1 text-xs rounded-md bg-blue-100 text-blue-700 hover:bg-blue-200 transition"
+                                            >
                                                 Edit
-                                            </button>
+                                            </Link>
                                             <button className="px-3 py-1 text-xs rounded-md bg-red-100 text-red-700 hover:bg-red-200">
                                                 Delete
                                             </button>

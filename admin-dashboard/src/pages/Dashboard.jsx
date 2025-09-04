@@ -129,47 +129,22 @@ export default function Dashboard() {
           </div>
         ))}
       </section>
-
-      {/* Charts */}
-      <section className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-        {/* Offers Bar Chart */}
-        <div className="bg-white rounded-xl shadow-md p-6">
-          <h3 className="text-lg font-semibold mb-4">Offers Status</h3>
-          <ResponsiveContainer width="100%" height={250}>
-            <BarChart data={offerData}>
-              <CartesianGrid strokeDasharray="3 3" />
-              <XAxis dataKey="name" />
-              <YAxis />
-              <Tooltip />
-              <Bar dataKey="count" fill="#3B82F6" radius={[8, 8, 0, 0]} />
-            </BarChart>
-          </ResponsiveContainer>
-        </div>
-
-        {/* Blogs Pie Chart */}
-        <div className="bg-white rounded-xl shadow-md p-6">
-          <h3 className="text-lg font-semibold mb-4">Blogs Status</h3>
-          <ResponsiveContainer width="100%" height={250}>
-            <PieChart>
-              <Pie
-                data={blogStatusData}
-                dataKey="value"
-                nameKey="name"
-                cx="50%"
-                cy="50%"
-                outerRadius={80}
-                label
-              >
-                {blogStatusData.map((entry, index) => (
-                  <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
-                ))}
-              </Pie>
-              <Tooltip />
-              <Legend />
-            </PieChart>
-          </ResponsiveContainer>
-        </div>
+      <section className="bg-white rounded-xl shadow-md p-6 border border-gray-100">
+        <h2 className="text-2xl font-bold text-gray-800 mb-4">About Login2Kashi</h2>
+        <p className="text-gray-600 leading-relaxed">
+          <span className="font-semibold">Login2Kashi</span> is your trusted travel partner for
+          exploring the spiritual city of Kashi (Varanasi). We provide complete arrangements for
+          visitors, including guided tours, Ganga Aarti experiences, temple visits, and
+          customized packages for pilgrims and travelers alike.
+        </p>
+        <p className="text-gray-600 mt-3 leading-relaxed">
+          Our mission is to make your journey to Kashi seamless and memorable by offering
+          authentic cultural experiences, dedicated customer support, and affordable packages.
+          With <span className="font-semibold">Login2Kashi</span>, you can experience the true
+          essence of spirituality, tradition, and the timeless charm of Varanasi.
+        </p>
       </section>
+
     </AdminLayout>
   );
 }

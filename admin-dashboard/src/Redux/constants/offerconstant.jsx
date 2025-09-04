@@ -1,0 +1,14 @@
+// Create / Update
+export const OFFER_REQUEST = "OFFER_REQUEST";
+export const OFFER_SUCCESS = "OFFER_SUCCESS";
+export const OFFER_FAIL = "OFFER_FAIL";
+
+// Fetch all
+export const OFFER_LIST_REQUEST = "OFFER_LIST_REQUEST";
+export const OFFER_LIST_SUCCESS = "OFFER_LIST_SUCCESS";
+export const OFFER_LIST_FAIL = "OFFER_LIST_FAIL";
+
+// Delete
+export const OFFER_DELETE_REQUEST = "OFFER_DELETE_REQUEST";
+export const OFFER_DELETE_SUCCESS = "OFFER_DELETE_SUCCESS";
+export const OFFER_DELETE_FAIL = "OFFER_DELETE_FAIL";
