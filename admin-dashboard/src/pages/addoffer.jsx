@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { createOrUpdateOffer } from "../Redux/action/offerAction";
 import { useParams } from "react-router-dom";
+import AdminLayout from "../layouts/AdminLayout";
 import axios from "axios";
 
 export default function OfferForm() {
@@ -50,10 +51,12 @@ export default function OfferForm() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    // alert(formData.description)
     dispatch(createOrUpdateOffer(formData, id));
   };
 
   return (
+    <AdminLayout>
     <div className="max-w-3xl mx-auto bg-white shadow-md rounded-xl p-6 border border-gray-200">
       <h2 className="text-2xl font-bold text-green-700 mb-6">
         {id ? "Update Offer" : "Add New Offer"}
@@ -172,5 +175,6 @@ export default function OfferForm() {
         </button>
       </form>
     </div>
+    </AdminLayout>
   );
 }

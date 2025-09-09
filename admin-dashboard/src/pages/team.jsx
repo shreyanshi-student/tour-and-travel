@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { PlusCircle } from "lucide-react";
+import { Link } from "react-router-dom";
 import AdminLayout from "../layouts/AdminLayout";
 
 // Sample fetch function (replace with API call)
@@ -39,12 +40,12 @@ export default function TeamMembersTable() {
                 {/* Header with Add button */}
                 <div className="flex justify-between items-center mb-6">
                     <h1 className="text-2xl font-bold text-green-700">Team Members</h1>
-                    <button
-                        onClick={() => alert("Open Add Member Form")}
+                    <Link
+                        to="/team/add"
                         className="flex items-center gap-2 px-4 py-2 bg-green-700 hover:bg-green-800 text-white rounded-lg shadow-md transition"
                     >
                         <PlusCircle size={18} /> Add New Member
-                    </button>
+                    </Link>
                 </div>
 
                 {/* Members Table */}
@@ -93,9 +94,12 @@ export default function TeamMembersTable() {
                                             )}
                                         </td>
                                         <td className="px-4 py-3 space-x-2">
-                                            <button className="px-3 py-1 text-xs rounded-md bg-blue-100 text-blue-700 hover:bg-blue-200">
+                                            <Link
+                                                to={`/offer/edit/${member._id}`} // replace offer._id with your actual id
+                                                className="px-3 py-1 text-xs rounded-md bg-blue-100 text-blue-700 hover:bg-blue-200 transition"
+                                            >
                                                 Edit
-                                            </button>
+                                            </Link>
                                             <button className="px-3 py-1 text-xs rounded-md bg-red-100 text-red-700 hover:bg-red-200">
                                                 Delete
                                             </button>

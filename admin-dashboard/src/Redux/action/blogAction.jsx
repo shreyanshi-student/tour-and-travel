@@ -11,6 +11,11 @@ import {
   BLOG_DELETE_FAIL,
 } from "../constants/blogconstantds";
 
+export const basename =
+  window.location.hostname === "localhost" || window.location.hostname === "127.0.0.1"
+    ? "http://localhost:5000/"          
+    : "https://login2kashi.onrender.com/"; 
+
 // CREATE or UPDATE Blog
 export const createOrUpdateBlog = (blogData, id = null) => async (dispatch) => {
   try {
@@ -20,8 +25,8 @@ export const createOrUpdateBlog = (blogData, id = null) => async (dispatch) => {
     Object.keys(blogData).forEach((key) => formData.append(key, blogData[key]));
 
     const res = id
-      ? await axios.put(`/api/blogs/${id}`, formData, { headers: { "Content-Type": "multipart/form-data" } })
-      : await axios.post("/api/blogs", formData, { headers: { "Content-Type": "multipart/form-data" } });
+      ? await axios.put(`${basename}/api/auth/blogs/${id}`, formData, { headers: { "Content-Type": "multipart/form-data" } })
+      : await axios.post(`${basename}/api/auth/blogs`, formData, { headers: { "Content-Type": "multipart/form-data" } });
 
     dispatch({ type: BLOG_SUCCESS, payload: res.data });
   } catch (err) {

@@ -11,14 +11,20 @@ import {
   OFFER_DELETE_FAIL,
 } from "../constants/offerconstant";
 
+export const basename =
+  window.location.hostname === "localhost" || window.location.hostname === "127.0.0.1"
+    ? "http://localhost:5000/"          
+    : "https://login2kashi.onrender.com/"; 
+
 // CREATE or UPDATE Offer
-export const createOrUpdateOffer = (offerData, id = null) => async (dispatch) => {
+export const createOrUpdateOffer = (formData, id = null) => async (dispatch) => {
+  // alert(formData)
   try {
     dispatch({ type: OFFER_REQUEST });
 
     const res = id
-      ? await axios.put(`/api/offer/${id}`, offerData, { headers: { "Content-Type": "application/json" } })
-      : await axios.post("/api/offer", offerData, { headers: { "Content-Type": "application/json" } });
+      ? await axios.put(`${basename}api/auth/offer/${id}`, formData, { headers: { "Content-Type": "application/json" } })
+      : await axios.post(`${basename}api/auth/offer`, formData, { headers: { "Content-Type": "application/json" } });
 
     dispatch({ type: OFFER_SUCCESS, payload: res.data });
   } catch (err) {

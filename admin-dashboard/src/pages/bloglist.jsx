@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { PlusCircle, Eye } from "lucide-react";
 import AdminLayout from "../layouts/AdminLayout";
+import { Link } from "react-router-dom";
 
 const fetchBlogs = async () => {
     return [
@@ -43,12 +44,12 @@ export default function BlogsTable() {
                 {/* Header */}
                 <div className="flex justify-between items-center mb-6">
                     <h1 className="text-2xl font-bold text-green-700">Blogs</h1>
-                    <button
+                    <Link
                         className="flex items-center gap-2 px-4 py-2 rounded-lg bg-green-700 hover:bg-green-800 text-white font-medium transition"
-                        onClick={() => alert("Open Add Blog Form")}
+                         to="/blog/add"
                     >
                         <PlusCircle size={18} /> Add New Blog
-                    </button>
+                    </Link>
                 </div>
 
                 {/* Blogs Table */}
@@ -96,9 +97,12 @@ export default function BlogsTable() {
                                             >
                                                 <Eye size={14} /> View
                                             </button>
-                                            <button className="px-3 py-1 text-sm rounded-lg border border-green-600 text-green-700 hover:bg-green-50">
+                                            <Link
+                                                to={`/offer/edit/${blog._id}`} // replace offer._id with your actual id
+                                                className="px-3 py-1 text-xs rounded-md bg-blue-100 text-blue-700 hover:bg-blue-200 transition"
+                                            >
                                                 Edit
-                                            </button>
+                                            </Link>
                                             <button className="px-3 py-1 text-sm rounded-lg border border-red-600 text-red-600 hover:bg-red-50">
                                                 Delete
                                             </button>

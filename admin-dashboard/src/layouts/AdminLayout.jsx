@@ -8,7 +8,7 @@ export default function AdminLayout({ children }) {
   return (
     <div className="flex min-h-screen bg-green-50 ">
       {/* Sidebar - Desktop */}
-      <aside className="hidden md:block sticky top-0 h-screen w-64 bg-white border-r border-gray-200 shadow-lg flex flex-col">
+      <aside className="hidden md:block sticky top-0 h-screen  bg-white border-r border-gray-200 shadow-lg flex flex-col">
         <Sidebar />
       </aside>
 

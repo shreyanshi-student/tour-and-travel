@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { createOrUpdateBlog } from "../Redux/action/blogAction";
 import { useParams } from "react-router-dom";
+import AdminLayout from "../layouts/AdminLayout";
 import axios from "axios";
 
 export default function BlogForm() {
@@ -48,6 +49,7 @@ export default function BlogForm() {
   };
 
   return (
+    <AdminLayout>
     <div className="max-w-3xl mx-auto bg-white shadow-md rounded-xl p-6 border border-gray-200">
       <h2 className="text-2xl font-bold text-green-700 mb-6">
         {id ? "Update Blog" : "Add New Blog"}
@@ -163,5 +165,6 @@ export default function BlogForm() {
         </button>
       </form>
     </div>
+    </AdminLayout>
   );
 }

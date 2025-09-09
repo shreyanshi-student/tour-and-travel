@@ -23,8 +23,13 @@ exports.getOfferById = async (req, res) => {
 
 // Create offer
 exports.createOffer = async (req, res) => {
+  
   try {
     const offer = new Offer(req.body);
+console.log(offer)
+const mongoose = require('mongoose');
+console.log("Mongoose state:", mongoose.connection.readyState);
+
     await offer.save();
     res.status(201).json(offer);
   } catch (err) {

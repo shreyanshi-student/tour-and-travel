@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { createOrUpdateTeam } from "../Redux/action/teamAction";
 import { useParams } from "react-router-dom";
 import axios from "axios";
+import AdminLayout from "../layouts/AdminLayout";
 
 export default function TeamForm() {
   const { id } = useParams(); // team member id if updating
@@ -59,6 +60,8 @@ export default function TeamForm() {
   };
 
   return (
+
+    <AdminLayout>
     <div className="max-w-3xl mx-auto bg-white shadow-md rounded-xl p-6 border border-gray-200">
       <h2 className="text-2xl font-bold text-green-700 mb-6">
         {id ? "Update Team Member" : "Add New Team Member"}
@@ -184,5 +187,6 @@ export default function TeamForm() {
         </button>
       </form>
     </div>
+    </AdminLayout>
   );
 }

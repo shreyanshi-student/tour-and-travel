@@ -11,8 +11,14 @@ import {
   TEAM_DELETE_FAIL,
 } from "../constants/teamConstants";
 
+export const basename =
+  window.location.hostname === "localhost" || window.location.hostname === "127.0.0.1"
+    ? "http://localhost:5000/"          
+    : "https://login2kashi.onrender.com/"; 
+
 // CREATE or UPDATE Team Member
 export const createOrUpdateTeam = (teamData, id = null) => async (dispatch) => {
+  alert(teamData)
   try {
     dispatch({ type: TEAM_REQUEST });
 
@@ -20,8 +26,8 @@ export const createOrUpdateTeam = (teamData, id = null) => async (dispatch) => {
     Object.keys(teamData).forEach((key) => formData.append(key, teamData[key]));
 
     const res = id
-      ? await axios.put(`/api/team/${id}`, formData, { headers: { "Content-Type": "multipart/form-data" } })
-      : await axios.post("/api/team", formData, { headers: { "Content-Type": "multipart/form-data" } });
+      ? await axios.put(`${basename}api/auth/team/${id}`, formData, { headers: { "Content-Type": "multipart/form-data" } })
+      : await axios.post(`${basename}api/auth/team`, formData, { headers: { "Content-Type": "multipart/form-data" } });
 
     dispatch({ type: TEAM_SUCCESS, payload: res.data });
   } catch (err) {
